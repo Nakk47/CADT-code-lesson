@@ -1,16 +1,8 @@
 // ***Main***
 
-let string = "aaa bbbb";
-challenge5(string);
+let string = ['A', 'B', 'C', 'B', 'D', ]
 
-
-
-
-
-
-
-
-
+challenge6(string);
 
 // ***Functions***
 
@@ -76,26 +68,46 @@ function challenge4(text, char) {
 // TODO: Count the numbers of words in a sentence
 
 function challenge5(text) {
-    let space = " ";
-    let counter = 0;
-    for(let i = 0; i < text.length; i++) {
-        if(text[i] === space) {
-            counter += 1;
-        } else if(text[text.length-1] != space) {
-            counter += 1;
-        } else if (text[0] === space){
-            continue;
-        } else if (text[text.length-1] === space) {
-            continue;
-        }
-    }
+    text = text.trim();
+    let counter = text.split(" ").length;
     console.log(counter);
 };
 
 
 // Challenge 6
-function challenge6() { // Simulate a voting system for three candidates (A/B/C)
+// Simulate a voting system for three candidates (A/B/C)
+function challenge6(arrayOfVotes) { 
+    let a = 0;
+    let b = 0;
+    let c = 0;
+    if(arrayOfVotes.length == 0) {
+        console.log("There are not any vote yet.");
+        return;
+    }
 
+    for(let i = 0; i < arrayOfVotes.length; i ++) {
+        if(arrayOfVotes(i) === 'A') {
+            a += 1;
+        } else if (arrayOfVotes(i) === 'B') {
+            b += 1;
+        } else if (arrayOfVotes(i) === 'C') {
+            c += 1;
+        }
+    }
+
+    if(a > b || a > c) {
+        console.log("A is the winner.");
+    } else if (b > a || b > c) {
+        console.log("B is the winner.");
+    } else if (c > a || c > b) {
+        console.log("C is the winner.");
+    } else if (a === b === c) {
+        console.log("A B and C are equal.");
+    } else if(a === b) {
+        console.log("A and B are both winners.");
+    } else if(a === c) {
+        console.log("A and C are both winners.");
+    }
 };
 
 
