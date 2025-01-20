@@ -1,8 +1,23 @@
 // ***Main***
 
-let string = ['A', 'B', 'C', 'B', 'D', ]
+// challenge1(10, 10);
 
-challenge6(string);
+// let myArray = [2, 4, 6, 7];
+// challenge2(myArray);
+
+// let arrayGrade = [20, 40, 50, 70];
+// challenge3(arrayGrade);
+
+// let text = "Hello World";
+// let char = 'l';
+// challenge4(text, char);
+
+// challenge5(text);
+
+// let voteArray = ['A', 'B', 'C']
+// challenge6(voteArray);
+
+
 
 // ***Functions***
 
@@ -11,7 +26,6 @@ challenge6(string);
 function challenge1(width, height) {
     let result = '';
     for(let i = 1; i <= height; i++ ) {
-
         for(let j = 1; j <= width; j++) {
             result += '*';
         }
@@ -20,12 +34,12 @@ function challenge1(width, height) {
     console.log(result);
 };
 
-
 // Challenge 2
 // TODO: Reverse any array.
 function challenge2(array) {
     let tempArray = [];
-    for(let i = array.length - 1; i >= 0; i --) {
+    let myLength = array.length;
+    for(let i = (myLength - 1); i >= 0; i --) {
         tempArray.push(array[i]);
     }
     console.log(tempArray);
@@ -38,9 +52,10 @@ function challenge3(arrayGrade) {
     let result = 0; // set to double
     let counter = 0;
 
-    if(array.length === 0){ // Check the length of the array
+    if(arrayGrade.length === 0){ // Check the length of the array
         result = 0;
     } else {
+
 
         for(let i = 0; i < arrayGrade.length; i++) {
             result += arrayGrade[i];
@@ -86,27 +101,29 @@ function challenge6(arrayOfVotes) {
     }
 
     for(let i = 0; i < arrayOfVotes.length; i ++) {
-        if(arrayOfVotes(i) === 'A') {
+        if(arrayOfVotes[i] === 'A') {
             a += 1;
-        } else if (arrayOfVotes(i) === 'B') {
+        } else if (arrayOfVotes[i] === 'B') {
             b += 1;
-        } else if (arrayOfVotes(i) === 'C') {
+        } else if (arrayOfVotes[i] === 'C') {
             c += 1;
         }
     }
 
-    if(a > b || a > c) {
-        console.log("A is the winner.");
-    } else if (b > a || b > c) {
-        console.log("B is the winner.");
-    } else if (c > a || c > b) {
-        console.log("C is the winner.");
-    } else if (a === b === c) {
+
+
+    if (a === b && a === c && b === c) {
         console.log("A B and C are equal.");
     } else if(a === b) {
         console.log("A and B are both winners.");
     } else if(a === c) {
         console.log("A and C are both winners.");
+    } else if(a > b && a > c) {
+        console.log("A is the winner.");
+    } else if (b > a && b > c) {
+        console.log("B is the winner.");
+    } else if (c > a && c > b) {
+        console.log("C is the winner.");
     }
 };
 
