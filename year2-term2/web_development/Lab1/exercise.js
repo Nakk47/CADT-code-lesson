@@ -1,22 +1,26 @@
 // ***Main***
 
-// challenge1(10, 10);
+    // Challenge 1
+let myWidth = document.getElementById("button-width");
+let myHeight = document.getElementById("button-height");
+let output = document.getElementById("output1");
 
-// let myArray = [2, 4, 6, 7];
-// challenge2(myArray);
 
-// let arrayGrade = [20, 40, 50, 70];
-// challenge3(arrayGrade);
+let width = 10;
+let height = 0;
 
-// let text = "Hello World";
-// let char = 'l';
-// challenge4(text, char);
 
-// challenge5(text);
+myWidth.onclick = function() {
+    let widthValue = prompt("Enter the width: ");
+    width = widthValue;
+}
 
-// let voteArray = ['A', 'B', 'C']
-// challenge6(voteArray);
+myHeight.onclick = function() {
+    let heightValue = prompt("Enter the height: ");
+    height = heightValue
+}
 
+output.textContent = challenge1(width, height)
 
 
 // ***Functions***
@@ -31,7 +35,7 @@ function challenge1(width, height) {
         }
         result += "\n";
     }
-    console.log(result);
+    return result;
 };
 
 // Challenge 2
