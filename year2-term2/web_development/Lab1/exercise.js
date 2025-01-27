@@ -1,26 +1,59 @@
 // ***Main***
 
+
+
+
+
+
     // Challenge 1
-let myWidth = document.getElementById("button-width");
-let myHeight = document.getElementById("button-height");
-let output = document.getElementById("output1");
+let start1 = document.getElementById("button-start");
+let output1 = document.getElementById("output1");
 
 
-let width = 10;
-let height = 0;
+// let width = 10;
+// let height = 0;
 
 
-myWidth.onclick = function() {
+start1.onclick = function() {
     let widthValue = prompt("Enter the width: ");
-    width = widthValue;
-}
-
-myHeight.onclick = function() {
     let heightValue = prompt("Enter the height: ");
-    height = heightValue
+    output1.innerHTML = challenge1(widthValue, heightValue);
 }
 
-output.textContent = challenge1(width, height)
+// myHeight.onclick = function() {
+//     let heightValue = prompt("Enter the height: ");
+//     height = heightValue
+// }
+
+// output.textContent = challenge1(width, height)
+
+
+
+console.log(measure);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ***Functions***
@@ -35,6 +68,7 @@ function challenge1(width, height) {
         }
         result += "\n";
     }
+    result = result.replace(/\n/g, '<br>');
     return result;
 };
 
