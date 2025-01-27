@@ -12,7 +12,7 @@ body
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 5em;
+    gap: 2em;
 }
 #header
 {
@@ -29,6 +29,8 @@ main
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 5em;
 }
 
 #back
@@ -84,6 +86,7 @@ main
     padding: 0 2em 0 2em;
     justify-content: center;
     align-items: center;
+    width: 500px;
 }
 
 .start-btn {

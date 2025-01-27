@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Button</title>
+</head>
+<body id="main-body">
+    <h1>Hi</h1>
+    <button id="dark-mode">add new thing</button>
+
+    <script>
+        let myButton = document.getElementById("dark-mode");
+        let main = document.getElementById("main-body");
+        let index = 0;
+        myButton.onclick = function () {
+            if(index % 2 === 0) {
+                main.style.backgroundImage = "url('image.png')";
+            } else {
+                main.style.backgroundImage = "url('image1.png')";
+            }
+            index += 1;
+
+        }
+    </script>
+</body>
+</html>

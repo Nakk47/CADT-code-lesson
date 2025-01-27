@@ -6,13 +6,8 @@
 
 
     // Challenge 1
-let start1 = document.getElementById("button-start");
+let start1 = document.getElementById("start1");
 let output1 = document.getElementById("output1");
-
-
-// let width = 10;
-// let height = 0;
-
 
 start1.onclick = function() {
     let widthValue = prompt("Enter the width: ");
@@ -20,22 +15,34 @@ start1.onclick = function() {
     output1.innerHTML = challenge1(widthValue, heightValue);
 }
 
-// myHeight.onclick = function() {
-//     let heightValue = prompt("Enter the height: ");
-//     height = heightValue
-// }
 
-// output.textContent = challenge1(width, height)
+    // Challenge 2
 
+let start2 = document.getElementById("start2");
+let output2 = document.getElementById("output2");
 
+start2.onclick = function() {
+    let arraySize = prompt("Enter the array size: ");
+    let array = [];
+    for(let i = 0; i < arraySize; i += 1) {
+        array[i] = prompt(`Enter the value of element ${i + 1}: `);
+    }
+    output2.textContent = challenge2(array);
+}
 
-console.log(measure);
+    // Challenge 3
+let start3 = document.getElementById("start3");
+let output3 = document.getElementById("output3");
 
+start3.onclick = function() {
+    let gradeSize = prompt("Enter the size of the array to store the grade: ");
+    let gradeArray = [];
+    for(let i = 0; i < gradeSize; i += 1) {
+        gradeArray[i] = prompt(`Enter the grade of element ${i + 1}: `);
+    }
+    output3.textContent = challenge3(arrayGrade); 
 
-
-
-
-
+}
 
 
 
@@ -80,7 +87,7 @@ function challenge2(array) {
     for(let i = (myLength - 1); i >= 0; i --) {
         tempArray.push(array[i]);
     }
-    console.log(tempArray);
+    return tempArray;
 };
 
 
@@ -101,7 +108,7 @@ function challenge3(arrayGrade) {
         }
         result = result / counter;
     }
-    console.log(result);
+    return result;
 };
 
 
