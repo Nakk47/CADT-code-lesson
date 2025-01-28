@@ -38,26 +38,45 @@ start3.onclick = function() {
     let gradeSize = prompt("Enter the size of the array to store the grade: ");
     let gradeArray = [];
     for(let i = 0; i < gradeSize; i += 1) {
-        gradeArray[i] = prompt(`Enter the grade of element ${i + 1}: `);
+        gradeArray[i] = prompt(`Enter the grade of element ${i + 1}: `); // when prompt all the element will be string or char
     }
-    output3.textContent = challenge3(arrayGrade); 
-
+    let gradeNumArray = gradeArray.map(Number); // convert to number
+    output3.textContent = challenge3(gradeNumArray, gradeSize);
 }
 
+    
+    // Challenge 4
 
+let start4 = document.getElementById("start4");
+let output4 = document.getElementById("output4");
 
+start4.onclick = function () {
+    let myString = prompt("Enter a sentence: ");
+    let myChar = prompt("Enter a character: ");
+    output4.textContent = challenge4(myString, myChar);
+}
 
+    //Challenge 5
+let start5 = document.getElementById("start5");
+let output5 = document.getElementById("output5");
 
+start5.onclick = function () {
+    let myText = prompt("Enter a paragraph: ");
+    output5.textContent = challenge5(myText);
+}
 
+    //Challenge 6
+let start6 = document.getElementById("start6");
+let output6 = document.getElementById("output6");
 
-
-
-
-
-
-
-
-
+start6.onclick = function () {
+    let numberOfVotes = prompt("Enter the number of votes: ");
+    let arrayOfVotes = [];
+    for(let i = 0; i < numberOfVotes; i += 1) {
+        arrayOfVotes[i] = prompt("Enter the candidates (character must be CAPITALIZED): ");
+    }
+    output6.textContent = challenge6(arrayOfVotes); 
+}
 
 
 
@@ -93,21 +112,20 @@ function challenge2(array) {
 
 // Challenge 3
 // TODO: Calculate the average grade of a list of student.
-function challenge3(arrayGrade) {
+function challenge3(arrayGrade, size) {
     let result = 0; // set to double
     let counter = 0;
+    Number(arrayGrade);
 
     if(arrayGrade.length === 0){ // Check the length of the array
         result = 0;
     } else {
-
-
-        for(let i = 0; i < arrayGrade.length; i++) {
+        for(let i = 0; i < size; i++) {
             result += arrayGrade[i];
             counter += 1;
         }
         result = result / counter;
-    }
+    } 
     return result;
 };
 
@@ -121,7 +139,8 @@ function challenge4(text, char) {
             counter += 1;
         }
     }
-    console.log(counter);
+    let output = `The letter "${char}" has appeared ${counter} times.`;
+    return output;
 };
 
 // Challenge 5
@@ -130,7 +149,7 @@ function challenge4(text, char) {
 function challenge5(text) {
     text = text.trim();
     let counter = text.split(" ").length;
-    console.log(counter);
+    return `Your word count is: ${counter}`;
 };
 
 
@@ -158,19 +177,20 @@ function challenge6(arrayOfVotes) {
 
 
     if (a === b && a === c && b === c) {
-        console.log("A B and C are equal.");
+        return "A B and C are equal.";
     } else if(a === b) {
-        console.log("A and B are both winners.");
+        return "A and B are both winners.";
     } else if(a === c) {
-        console.log("A and C are both winners.");
+        return "A and C are both winners.";
     } else if(a > b && a > c) {
-        console.log("A is the winner.");
+        return "A is the winner.";
     } else if (b > a && b > c) {
-        console.log("B is the winner.");
+        return "B is the winner.";
     } else if (c > a && c > b) {
-        console.log("C is the winner.");
+        return "C is the winner.";
     }
 };
+
 
 
 

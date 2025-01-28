@@ -13,17 +13,27 @@ body
     flex-direction: column;
     width: 100%;
     gap: 2em;
+    padding-bottom: 2.5em;
 }
 #header
 {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    background-color: #eafdc9;
+    border-bottom: 1px solid black;
+    position: fixed;
+    width: 100%;
+}
+
+#empty {
+    width: 100px;
 }
 
 
 main
 {
+    padding-top: 7.5em;
     align-self: center;
     justify-self: center;
     display: flex;
@@ -86,7 +96,7 @@ main
     padding: 0 2em 0 2em;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 650px;
 }
 
 .start-btn {
